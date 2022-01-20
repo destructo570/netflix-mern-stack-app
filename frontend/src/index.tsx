@@ -12,6 +12,13 @@ const baseTheme = {
     accentPrimary: "#e50914",
     accentPrimaryHighlight: "#ff0e1a",
   },
+  padding: {
+    default: 1.4,
+  },
+  margin: {
+    defaultVertical: 0,
+    defaultHorizontal: 0,
+  },
   layout: {
     maxWidth: "1250px",
     medium: {
