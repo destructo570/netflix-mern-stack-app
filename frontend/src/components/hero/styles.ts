@@ -30,32 +30,6 @@ export const SubTitle = styled.p`
   margin-top: 1em;
 `;
 
-export const SignUpForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1em;
-
-  button {
-    margin-top: 1em;
-    min-height: 50px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.layout.medium.media}) {
-    flex-direction: row;
-
-    input {
-      max-width: 500px;
-      border-radius: 4px 0px 0px 4px;
-    }
-
-    button {
-      margin: 0;
-      border-radius: 0px 4px 4px 0px;
-    }
-  }
-`;
-
 export const BackgroundImage = styled.div`
   position: absolute;
   top: 0px;

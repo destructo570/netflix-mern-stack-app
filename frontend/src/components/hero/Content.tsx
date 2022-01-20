@@ -1,20 +1,12 @@
-import Button from "../global/Button/Button";
-import Input from "../global/Input/Input";
-
-import { ContentPane, Title, SubTitle, SignUpForm } from "./styles";
+import SignUpForm from "../signUpForm/SignUpForm";
+import { ContentPane, Title, SubTitle } from "./styles";
 
 const Content: React.FC = (props) => {
   return (
     <ContentPane>
       <Title>Unlimited movies, TV shows and more.</Title>
       <SubTitle>Watch anywhere. Cancel anytime.</SubTitle>
-      <SubTitle>
-        Ready to watch? Enter your email to create or restart your membership.
-      </SubTitle>
-      <SignUpForm>
-        <Input type="text" placeholder="Email address" />
-        <Button title="Get Started" fontSize={1} />
-      </SignUpForm>
+      <SignUpForm paddingLR={0} marginLR={0} paddingTB={1.4} />
     </ContentPane>
   );
 };
