@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "title": "FAQ",
+    "link": "https://help.netflix.com/en/node/412"
+  },
+  {
+    "id": 2,
+    "title": "Help centre",
+    "link": "https://help.netflix.com/en/"
+  },
+  {
+    "id": 3,
+    "title": "Account",
+    "link": "https://www.netflix.com/in/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fyouraccount"
+  },
+  {
+    "id": 4,
+    "title": "Media Centre",
+    "link": "https://media.netflix.com/en/"
+  },
+  {
+    "id": 5,
+    "title": "Investor Relations",
+    "link": "http://ir.netflix.com/"
+  },
+  {
+    "id": 6,
+    "title": "Jobs",
+    "link": "https://jobs.netflix.com/jobs"
+  },
+  {
+    "id": 7,
+    "title": "Ways to Watch",
+    "link": "https://www.netflix.com/watch"
+  },
+  {
+    "id": 8,
+    "title": "Terms Of Use",
+    "link": "https://help.netflix.com/legal/termsofuse"
+  },
+  {
+    "id": 9,
+    "title": "Privacy",
+    "link": "https://help.netflix.com/legal/privacy"
+  },
+  {
+    "id": 10,
+    "title": "Cookie Preferences",
+    "link": "https://www.netflix.com/in/#"
+  },
+  {
+    "id": 11,
+    "title": "Corporate Information",
+    "link": "https://help.netflix.com/legal/corpinfo"
+  },
+  {
+    "id": 12,
+    "title": "Contact Us",
+    "link": "https://help.netflix.com/contactus"
+  },
+  {
+    "id": 13,
+    "title": "Speed Test",
+    "link": "https://fast.com/"
+  },
+  {
+    "id": 14,
+    "title": "Legal Notices",
+    "link": "https://help.netflix.com/legal/notices"
+  },
+  {
+    "id": 15,
+    "title": "Only on Netflix",
+    "link": "https://www.netflix.com/in/browse/genre/839338"
+  }
+]
