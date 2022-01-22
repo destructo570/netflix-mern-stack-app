@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import App from "./App";
 import Footer from "./components/footer/Footer";
 import GlobalStyles from "./styles/GlobalStyles";
+import { BrowserRouter } from "react-router-dom";
 
 const baseTheme = {
   colors: {
@@ -37,11 +38,13 @@ export type ThemeType = typeof baseTheme;
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={baseTheme}>
-      <GlobalStyles />
-      <App />
-      <Footer />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={baseTheme}>
+        <GlobalStyles />
+        <App />
+        <Footer />
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

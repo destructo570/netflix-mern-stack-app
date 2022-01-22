@@ -16,8 +16,16 @@ const StyledButton = styled.button<{ fontSize?: number }>`
   }
 `;
 
-const Button: React.FC<{ title: string; fontSize?: number }> = (props) => {
-  return <StyledButton fontSize={props.fontSize}>{props.title}</StyledButton>;
+const Button: React.FC<{
+  title: string;
+  fontSize?: number;
+  onClick?: () => void;
+}> = (props) => {
+  return (
+    <StyledButton fontSize={props.fontSize} onClick={props.onClick}>
+      {props.title}
+    </StyledButton>
+  );
 };
 
 export default Button;

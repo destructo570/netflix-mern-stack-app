@@ -1,7 +1,13 @@
 import Button from "../global/Button/Button";
 import { HeaderPane, HeaderActions } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = (props) => {
+  const navigate = useNavigate();
+
+  const signInHandler = () => {
+    navigate("/signin");
+  };
   return (
     <HeaderPane>
       <img
@@ -11,7 +17,7 @@ const Header: React.FC = (props) => {
         alt="logo"
       />
       <HeaderActions>
-        <Button title="Sign In" />
+        <Button title="Sign In" onClick={signInHandler} />
       </HeaderActions>
     </HeaderPane>
   );
