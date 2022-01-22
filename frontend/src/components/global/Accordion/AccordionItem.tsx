@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { Container, Header, Body } from "./styles";
 
@@ -16,16 +17,22 @@ const AccordionItem: React.FC<{
 
   return (
     <Container>
-      <Header onClick={props.toggleIndex.bind(null, id)}>
-        <p>{title}</p>
-
-        <img src="images/icons/add-icon.svg" alt=""></img>
-      </Header>
-      {props.clicked === id && (
-        <Body>
-          <p>{body}</p>
-        </Body>
-      )}
+      <AnimatePresence exitBeforeEnter>
+        <Header onClick={props.toggleIndex.bind(null, id)}>
+          <p>{title}</p>
+          <img src="images/icons/add-icon.svg" alt="" />
+        </Header>
+        {props.clicked === id && (
+          <Body
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -50, opacity: 0, transition: { duration: 0.1 } }}
+            key={id}
+          >
+            <p>{body}</p>
+          </Body>
+        )}
+      </AnimatePresence>
     </Container>
   );
 };
