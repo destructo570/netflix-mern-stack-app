@@ -12,13 +12,14 @@ export const Container = styled.div`
   }
 `;
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled.div<{ direction: string }>`
   text-align: center;
 
   @media (min-width: ${({ theme }) => theme.layout.media.lg}) {
     max-width: ${({ theme }) => theme.layout.maxWidth};
     margin: 0 auto;
     display: flex;
+    flex-direction: ${({ direction }) => direction};
     align-items: center;
     justify-content: center;
     text-align: justify;

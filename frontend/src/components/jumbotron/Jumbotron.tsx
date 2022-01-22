@@ -1,12 +1,15 @@
 import React from "react";
 import { Container, Header, Image, ContentWrapper } from "./styles";
 
-const Jumbotron: React.FC<{ title: string; body: string; img: string }> = (
-  props
-) => {
+const Jumbotron: React.FC<{
+  title: string;
+  body: string;
+  img: string;
+  direction: string;
+}> = (props) => {
   return (
     <Container>
-      <ContentWrapper>
+      <ContentWrapper direction={props.direction}>
         <Header>
           <h2>{props.title}</h2>
           <p>{props.body}</p>

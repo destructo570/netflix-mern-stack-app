@@ -11,6 +11,7 @@ const Promotion: React.FC = (props) => {
         title={item.title}
         body={item.subTitle}
         img={item.image}
+        direction={item.direction}
       />
     );
   });
