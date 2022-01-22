@@ -24,10 +24,17 @@ export const ContentPane = styled.div`
   padding: 6em 1.4em;
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  font-size: clamp(1.6rem, 4vw, 3.4rem);
+
+  @media (min-width: ${({ theme }) => theme.layout.media.sm}) {
+    padding: 0 4em;
+  }
+`;
 
 export const SubTitle = styled.p`
-  margin-top: 1em;
+  margin-top: 0.5em;
+  font-size: clamp(1.2rem, 4vw, 1.4rem);
 `;
 
 export const BackgroundImage = styled.div`
@@ -35,6 +42,7 @@ export const BackgroundImage = styled.div`
   top: 0px;
   z-index: -10;
   height: 100%;
+  width: 100%;
 
   img {
     width: 100%;
