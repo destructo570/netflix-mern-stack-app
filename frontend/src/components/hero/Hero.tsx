@@ -1,4 +1,4 @@
-import Wrapper from "../Wrapper/Wrapper";
+import Wrapper from "../global/Wrapper/Wrapper";
 import Content from "./Content";
 import Header from "./Header";
 import { Container } from "./styles";
