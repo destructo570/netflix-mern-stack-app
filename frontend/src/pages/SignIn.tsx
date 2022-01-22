@@ -1,11 +1,14 @@
 import React from "react";
+import NavHeader from "../components/signIn/NavHeader";
+import SignIn from "../components/signIn/SignIn";
 
-const SignIn: React.FC = () => {
+const SignInPage: React.FC = () => {
   return (
     <>
-      <p>Sign In Page...</p>
+      <NavHeader />
+      <SignIn />
     </>
   );
 };
 
-export default SignIn;
+export default SignInPage;

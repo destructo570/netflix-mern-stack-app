@@ -2,13 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
 import App from "./App";
-import Footer from "./components/footer/Footer";
 import GlobalStyles from "./styles/GlobalStyles";
 import { BrowserRouter } from "react-router-dom";
 
 const baseTheme = {
   colors: {
     body: "rgb(0,0,0)",
+    slate: "#333333",
+    slateLight: "#424242",
+    gray: "#9c9c9c",
     textPrimary: "#ffffff",
     textSecondary: "#5e5e5e",
     accentPrimary: "#e50914",
@@ -42,7 +44,6 @@ ReactDOM.render(
       <ThemeProvider theme={baseTheme}>
         <GlobalStyles />
         <App />
-        <Footer />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

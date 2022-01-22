@@ -1,7 +1,7 @@
 import React from "react";
 
-const SignUp: React.FC = () => {
+const SignUpPage: React.FC = () => {
   return <></>;
 };
 
-export default SignUp;
+export default SignUpPage;

@@ -1,5 +1,6 @@
 import React from "react";
 import FAQ from "../components/faq/Faq";
+import Footer from "../components/footer/Footer";
 import Hero from "../components/hero/Hero";
 import Promotion from "../components/promotion/Promotion";
 import SignUpForm from "../components/signUpForm/SignUpForm";
@@ -11,6 +12,7 @@ const HomePage: React.FC = () => {
       <Promotion />
       <FAQ />
       <SignUpForm paddingLR={1.4} marginTB={2} />
+      <Footer />
     </>
   );
 };

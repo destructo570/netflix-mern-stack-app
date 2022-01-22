@@ -1,12 +1,12 @@
 import Button from "../global/Button/Button";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import {
   SignUpContainer,
   FormContainer,
   ErrorText,
   EmailInput,
 } from "./styles";
-import * as Yup from "yup";
 
 const SignUpForm: React.FC<{
   marginLR?: number;
