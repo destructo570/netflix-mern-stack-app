@@ -14,6 +14,7 @@ export const SignUpContainer = styled.div<{
   margin-bottom: ${({ marginTB }) => marginTB || 0}em;
   margin-left: ${({ marginLR }) => marginLR || 0}em;
   margin-right: ${({ marginLR }) => marginLR || 0}em;
+  text-align: center;
 `;
 export const FormContainer = styled.form`
   display: flex;
@@ -26,7 +27,7 @@ export const FormContainer = styled.form`
     min-height: 50px;
   }
 
-  @media (min-width: ${({ theme }) => theme.layout.medium.media}) {
+  @media (min-width: ${({ theme }) => theme.layout.media.sm}) {
     flex-direction: row;
 
     input {
