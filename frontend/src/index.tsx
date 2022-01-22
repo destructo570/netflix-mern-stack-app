@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
 import App from "./App";
+import Footer from "./components/footer/Footer";
 import GlobalStyles from "./styles/GlobalStyles";
 
 const baseTheme = {
   colors: {
     body: "rgb(0,0,0)",
     textPrimary: "#ffffff",
-    textSecondary: "rgba(0, 0, 0)",
+    textSecondary: "#5e5e5e",
     accentPrimary: "#e50914",
     accentPrimaryHighlight: "#ff0e1a",
   },
@@ -20,12 +21,13 @@ const baseTheme = {
     defaultHorizontal: 0,
   },
   layout: {
-    maxWidth: "1250px",
-    medium: {
-      media: "768px",
-    },
-    large: {
-      media: "1200px",
+    maxWidth: "1100px",
+    media: {
+      xs: "0px",
+      sm: "600px",
+      md: "768px",
+      lg: "950px",
+      xlg: "1280px",
     },
   },
 };
@@ -37,6 +39,7 @@ ReactDOM.render(
     <ThemeProvider theme={baseTheme}>
       <GlobalStyles />
       <App />
+      <Footer />
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
