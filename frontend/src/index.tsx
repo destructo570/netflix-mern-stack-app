@@ -12,6 +12,7 @@ const baseTheme = {
     textSecondary: "#5e5e5e",
     accentPrimary: "#e50914",
     accentPrimaryHighlight: "#ff0e1a",
+    accentSecondary: "#f5c31f",
   },
   padding: {
     default: 1.4,

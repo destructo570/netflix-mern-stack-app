@@ -30,14 +30,33 @@ export const FormContainer = styled.form`
   @media (min-width: ${({ theme }) => theme.layout.media.sm}) {
     flex-direction: row;
 
-    input {
-      max-width: 500px;
-      border-radius: 4px 0px 0px 4px;
-    }
-
     button {
       margin: 0;
       border-radius: 0px 4px 4px 0px;
     }
   }
+`;
+
+export const EmailInput = styled.input`
+  max-width: 500px;
+  border-radius: 4px 0px 0px 4px;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  padding: 0.8em 0.6em;
+  min-height: 50px;
+  font-family: "Be Vietnam Pro";
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 800px;
+
+  &:focus {
+    border: none;
+  }
+`;
+
+export const ErrorText = styled.p`
+  text-align: justify;
+  margin: 0.25em 0;
+  color: ${({ theme }) => theme.colors.accentSecondary};
 `;
