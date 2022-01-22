@@ -35,19 +35,22 @@ const SignUpForm: React.FC<{
       </p>
 
       <FormContainer onSubmit={formik.handleSubmit}>
-        <EmailInput
-          placeholder="Email address"
-          id="email"
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
+        <div>
+          <EmailInput
+            placeholder="Email address"
+            id="email"
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            errors={formik.errors.email}
+          />
 
-        {formik.touched.email && formik.errors.email && (
-          <ErrorText>Please enter a valid email address.</ErrorText>
-        )}
+          {formik.touched.email && formik.errors.email && (
+            <ErrorText>Please enter a valid email address.</ErrorText>
+          )}
+        </div>
         <Button title="Get Started" fontSize={1} />
       </FormContainer>
     </SignUpContainer>
