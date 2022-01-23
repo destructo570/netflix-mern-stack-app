@@ -4,12 +4,8 @@ export const Container = styled.section`
   position: realtive;
 
   footer {
-    position: absolute;
-    padding-top: 2em;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
     background-color: rgba(0, 0, 0, 1);
+    margin: 0;
   }
 
   @media (min-width: ${({ theme }) => theme.layout.media.sm}) {
@@ -41,6 +37,7 @@ export const SignInContainer = styled.section`
   @media (min-width: ${({ theme }) => theme.layout.media.sm}) {
     padding: 3em;
     margin-top: 3em;
+    margin-bottom: 3em;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.6);
   }
