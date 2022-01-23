@@ -49,24 +49,8 @@ export const SignInContainer = styled.section`
 export const FormContainer = styled.form`
   margin-top: 2em;
 
-  input {
-    color: ${({ theme }) => theme.colors.gray};
-    background-color: ${({ theme }) => theme.colors.slate};
-    padding: 0.8em 0.6em;
-    min-height: 50px;
-    font-family: "Be Vietnam Pro";
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    width: 100%;
-  }
-
-  input + input {
+  div + div {
     margin-top: 1em;
-  }
-
-  input:focus {
-    background-color: ${({ theme }) => theme.colors.slateLight};
   }
 
   button {
@@ -74,6 +58,34 @@ export const FormContainer = styled.form`
     min-height: 50px;
     margin-top: 2em;
   }
+`;
+
+export const Input = styled.input<{
+  errors: string | undefined;
+  touched: boolean | undefined;
+}>`
+  color: ${({ theme }) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.slate};
+  padding: 0.8em 0.6em;
+  min-height: 50px;
+  font-family: "Be Vietnam Pro";
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  border-bottom: ${({ errors, touched }) =>
+    errors && touched ? "3px solid #f5c31f" : "none"};
+
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.slateLight};
+  }
+`;
+
+export const ErrorText = styled.p`
+  text-align: justify;
+  font-size: 0.75rem;
+  margin: 0.5em 0;
+  color: ${({ theme }) => theme.colors.accentSecondary};
 `;
 
 export const OtherActions = styled.div`
