@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -5,12 +6,25 @@ const Nav = styled.nav`
   img {
     max-width: 180px;
   }
+
+  img:hover {
+    cursor: pointer;
+  }
 `;
 
 const NavHeader = () => {
+  const navigate = useNavigate();
+
+  const navClickHandler = () => {
+    navigate("/");
+  };
   return (
     <Nav>
-      <img src={require("../../assets/logo.png")} alt="" />
+      <img
+        src={require("../../assets/logo.png")}
+        alt=""
+        onClick={navClickHandler}
+      />
     </Nav>
   );
 };
