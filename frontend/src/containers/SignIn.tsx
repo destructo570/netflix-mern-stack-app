@@ -16,6 +16,7 @@ import Form, {
 import Footer from "../components/footer/Footer";
 import Header, { HeaderFrame, HeaderLogo } from "../components/header/Header";
 import { HOME } from "../constants/routes";
+import FooterComponent from "./Footer";
 
 const SignInComponent: React.FC<{}> = ({ children, ...restProps }) => {
   const formik = useFormik({
@@ -94,7 +95,7 @@ const SignInComponent: React.FC<{}> = ({ children, ...restProps }) => {
           </FormBase>
         </Form>
       </Header>
-      <Footer />
+      <FooterComponent />
     </>
   );
 };

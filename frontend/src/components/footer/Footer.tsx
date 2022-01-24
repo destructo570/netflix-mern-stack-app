@@ -1,27 +1,27 @@
-import { FooterContainer, SupportContactNumber, FooterLinks } from "./styles";
-import footerLinks from "../../fixtures/footerLinks.json";
-import Wrapper from "../global/Wrapper/Wrapper";
-const Footer = () => {
-  const footerLinksList = footerLinks.map((item) => {
-    return (
-      <li key={item.id}>
-        <a href={item.link} target="_blank" rel="noreferrer">
-          {item.title}
-        </a>
-      </li>
-    );
-  });
+import { Container, Text, Link, Pane } from "./styles";
+import React from "react";
 
+const Footer: React.FC = ({ children, ...restProps }) => {
+  return <Container {...restProps}>{children}</Container>;
+};
+
+export const FooterPane: React.FC = ({ children, ...restProps }) => {
+  return <Pane {...restProps}>{children}</Pane>;
+};
+
+export const FooterText: React.FC = ({ children, ...restProps }) => {
+  return <Text {...restProps}>{children}</Text>;
+};
+
+export const FooterLink: React.FC<{ link: string }> = ({
+  children,
+  link,
+  ...restProps
+}) => {
   return (
-    <FooterContainer>
-      <Wrapper>
-        <SupportContactNumber>
-          <p>Questions? Call</p>
-          <a href="#">000-800-040-1843</a>
-        </SupportContactNumber>
-        <FooterLinks>{footerLinksList}</FooterLinks>
-      </Wrapper>
-    </FooterContainer>
+    <Link href={link} target="_blank" rel="noreferrer" {...restProps}>
+      {children}
+    </Link>
   );
 };
 

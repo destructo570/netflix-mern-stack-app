@@ -1,9 +1,9 @@
 import React from "react";
 import Faqs from "../containers/Faqs";
-import Footer from "../components/footer/Footer";
 import SignUpForm from "../components/signUpForm/SignUpForm";
 import JumbotronComponent from "../containers/Jumbotron";
 import HomeHeaderComponent from "../containers/HomePageHeader";
+import FooterComponent from "../containers/Footer";
 
 const HomePage: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
       <JumbotronComponent />
       <Faqs />
       <SignUpForm paddingLR={1.4} marginTB={2} />
-      <Footer />
+      <FooterComponent />
     </>
   );
 };
