@@ -1,13 +1,15 @@
 import Button from "../global/Button/Button";
 import { HeaderPane, HeaderActions } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { SIGN_IN } from "../../constants/routes";
 
 const Header: React.FC = (props) => {
   const navigate = useNavigate();
 
   const signInHandler = () => {
-    navigate("/signin");
+    navigate(SIGN_IN);
   };
+
   return (
     <HeaderPane>
       <img
