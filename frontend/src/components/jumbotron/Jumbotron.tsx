@@ -3,8 +3,8 @@ import { Inner, Container, Image, Title, SubTitle, Pane } from "./styles";
 
 const Jumbotron: React.FC<{
   direction: string;
-}> = ({ children, ...props }) => {
-  return <Inner {...props}>{children}</Inner>;
+}> = ({ children, ...restProps }) => {
+  return <Inner {...restProps}>{children}</Inner>;
 };
 
 export const JumbotronContainer: React.FC = ({ children, ...restProps }) => {

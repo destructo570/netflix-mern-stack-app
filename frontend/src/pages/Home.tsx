@@ -1,5 +1,5 @@
 import React from "react";
-import FAQ from "../components/faq/Faq";
+import Faqs from "../containers/Faqs";
 import Footer from "../components/footer/Footer";
 import Hero from "../components/hero/Hero";
 import SignUpForm from "../components/signUpForm/SignUpForm";
@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
       <Hero />
 
       <JumbotronComponent />
-      <FAQ />
+      <Faqs />
       <SignUpForm paddingLR={1.4} marginTB={2} />
       <Footer />
     </>
