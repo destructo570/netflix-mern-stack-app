@@ -1,12 +1,10 @@
 import React from "react";
-import NavHeader from "../components/signIn/NavHeader";
-import SignIn from "../components/signIn/SignIn";
+import SignInComponent from "../containers/SignIn";
 
 const SignInPage: React.FC = () => {
   return (
     <>
-      <NavHeader />
-      <SignIn />
+      <SignInComponent />
     </>
   );
 };
