@@ -1,25 +1,34 @@
 import React from "react";
-import { Container, Header, Image, ContentWrapper } from "./styles";
+import { Inner, Container, Image, Title, SubTitle, Pane } from "./styles";
 
 const Jumbotron: React.FC<{
-  title: string;
-  body: string;
-  img: string;
   direction: string;
-}> = (props) => {
-  return (
-    <Container>
-      <ContentWrapper direction={props.direction}>
-        <Header>
-          <h2>{props.title}</h2>
-          <p>{props.body}</p>
-        </Header>
-        <Image>
-          <img src={props.img} alt="" />
-        </Image>
-      </ContentWrapper>
-    </Container>
-  );
+}> = ({ children, ...props }) => {
+  return <Inner {...props}>{children}</Inner>;
+};
+
+export const JumbotronContainer: React.FC = ({ children, ...restProps }) => {
+  return <Container {...restProps}>{children}</Container>;
+};
+
+export const JumbotronPane: React.FC = ({ children, ...restProps }) => {
+  return <Pane {...restProps}>{children}</Pane>;
+};
+
+export const JumbotronTitle: React.FC = ({ children, ...restProps }) => {
+  return <Title {...restProps}>{children}</Title>;
+};
+
+export const JumbotronSubTitle: React.FC = ({ children, ...restProps }) => {
+  return <SubTitle {...restProps}>{children}</SubTitle>;
+};
+
+export const JumbotronImage: React.FC<{ src: string; alt: string }> = ({
+  src,
+  alt,
+  ...restProps
+}) => {
+  return <Image src={src} alt={alt} {...restProps} />;
 };
 
 export default Jumbotron;

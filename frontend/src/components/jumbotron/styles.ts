@@ -1,5 +1,51 @@
 import styled from "styled-components";
 
+export const Inner = styled.div<{ direction: string }>`
+  & + & {
+    padding: 2.6em 0;
+  }
+  @media (min-width: ${({ theme }) => theme.layout.media.lg}) {
+    min-height: 450px;
+    max-width: ${({ theme }) => theme.layout.maxWidth};
+    margin: 0 auto;
+    display: flex;
+    flex-direction: ${({ direction }) => direction};
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+
+    & + & {
+      padding: 0;
+    }
+  }
+`;
+
+export const Pane = styled.div`
+  text-align: center;
+
+  @media (min-width: ${({ theme }) => theme.layout.media.lg}) {
+    text-align: justify;
+    width: 50%;
+    padding: 0 1em;
+  }
+`;
+
+export const Title = styled.h2`
+  @media (min-width: ${({ theme }) => theme.layout.media.md}) {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+  }
+`;
+
+export const SubTitle = styled.p`
+  @media (min-width: ${({ theme }) => theme.layout.media.md}) {
+    font-size: clamp(1.2rem, 4vw, 1.4rem);
+  }
+`;
+
+export const Image = styled.img`
+  max-width: 100%;
+`;
+
 export const Container = styled.div`
   padding-top: 3em;
   padding-bottom: 3em;
@@ -10,47 +56,4 @@ export const Container = styled.div`
   p {
     margin-top: 1em;
   }
-`;
-
-export const ContentWrapper = styled.div<{ direction: string }>`
-  text-align: center;
-
-  @media (min-width: ${({ theme }) => theme.layout.media.lg}) {
-    max-width: ${({ theme }) => theme.layout.maxWidth};
-    margin: 0 auto;
-    display: flex;
-    flex-direction: ${({ direction }) => direction};
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-  }
-`;
-
-export const Header = styled.div`
-  @media (min-width: ${({ theme }) => theme.layout.media.md}) {
-    h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-    }
-    p {
-      font-size: clamp(1.2rem, 4vw, 1.4rem);
-    }
-  }
-
-  //TODO: Remove use of these percentage widths
-  @media (min-width: ${({ theme }) => theme.layout.media.lg}) {
-    width: 65%;
-    h2 {
-      width: 80%;
-    }
-    p {
-      width: 80%;
-    }
-  }
-`;
-
-export const Image = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
