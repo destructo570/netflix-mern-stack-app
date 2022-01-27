@@ -4,6 +4,8 @@ import { ThemeProvider } from "styled-components";
 import App from "./App";
 import GlobalStyles from "./styles/GlobalStyles";
 import { BrowserRouter } from "react-router-dom";
+import { FirebaseContext } from "./context/firebase";
+import { firebase, firestore, auth } from "./lib/firebase.prod";
 
 const baseTheme = {
   colors: {
@@ -40,12 +42,14 @@ export type ThemeType = typeof baseTheme;
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={baseTheme}>
-        <GlobalStyles />
-        <App />
-      </ThemeProvider>
-    </BrowserRouter>
+    <FirebaseContext.Provider value={{ firebase, firestore, auth }}>
+      <BrowserRouter>
+        <ThemeProvider theme={baseTheme}>
+          <GlobalStyles />
+          <App />
+        </ThemeProvider>
+      </BrowserRouter>
+    </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
