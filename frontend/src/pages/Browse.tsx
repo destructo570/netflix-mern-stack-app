@@ -4,7 +4,7 @@ const BrowsePage = () => {
   return (
     <>
       <Navigation />
-      <div>Browse Page</div>
+      <div>Browse</div>
       <Navigation.Container />
     </>
   );

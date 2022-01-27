@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { useContext, useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import * as Yup from "yup";
 import Form, {
   FormBase,
@@ -15,24 +15,35 @@ import Form, {
   FormTitle,
   FormBreak,
 } from "../components/form/Form";
-import Header, { HeaderFrame, HeaderLogo } from "../components/header/Header";
-import { HOME, SIGN_UP } from "../constants/routes";
+import Header, {
+  HeaderButtonLink,
+  HeaderFrame,
+  HeaderLogo,
+} from "../components/header/Header";
+import { BROWSE, HOME, SIGN_IN } from "../constants/routes";
 import { FirebaseContext } from "../context/firebase";
 import FooterComponent from "./Footer";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const SignInComponent: React.FC<{}> = ({ children, ...restProps }) => {
+const SignUpComponent: React.FC<{}> = ({ children, ...restProps }) => {
   const { auth } = useContext(FirebaseContext);
   const [formError, setFormError] = useState<string>("");
   const navigate = useNavigate();
-  const location = useLocation() as any;
-  const from = location.state?.from?.pathname || HOME;
 
-  const signInHandler = async (email: string, password: string) => {
+  const signUpHandler = async (
+    firstName: string,
+    email: string,
+    password: string
+  ) => {
     if (auth != null) {
-      signInWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          navigate(from, { replace: true });
+          updateProfile(userCredential.user, {
+            displayName: firstName,
+            photoURL: (Math.floor(Math.random() * 5) + 1).toString(),
+          }).then((result) => {
+            navigate(BROWSE);
+          });
         })
         .catch((error) => {
           setFormError(error.message);
@@ -44,11 +55,15 @@ const SignInComponent: React.FC<{}> = ({ children, ...restProps }) => {
     initialValues: {
       email: "",
       password: "",
+      firstName: "",
     },
     onSubmit: (values) => {
-      signInHandler(values.email, values.password);
+      signUpHandler(values.firstName, values.email, values.password);
     },
     validationSchema: Yup.object({
+      firstName: Yup.string()
+        .min(3, "First name too short")
+        .required("Required"),
       email: Yup.string()
         .email("Please enter a valid email address.")
         .required("Required"),
@@ -67,11 +82,24 @@ const SignInComponent: React.FC<{}> = ({ children, ...restProps }) => {
             logo={require("../assets/logo.png")}
             alt="netflix"
           />
+          <HeaderButtonLink to={SIGN_IN}>Sign In</HeaderButtonLink>
         </HeaderFrame>
         <Form>
           <FormBase>
-            <FormTitle>Sign In</FormTitle>
+            <FormTitle>Sign Up</FormTitle>
             {formError && <FormError>{formError}</FormError>}
+            <FormInput
+              inputId="firstName"
+              name="firstName"
+              type="firstName"
+              value={formik.values.firstName}
+              changeHandler={formik.handleChange}
+              blurHandler={formik.handleBlur}
+              placeholder="Enter first name"
+            />
+            {formik.touched.firstName && formik.errors.firstName && (
+              <FormError>Please enter a valid name.</FormError>
+            )}
             <FormInput
               inputId="email"
               name="email"
@@ -98,17 +126,10 @@ const SignInComponent: React.FC<{}> = ({ children, ...restProps }) => {
                 Your password must contain between 4 and 60 characters.
               </FormError>
             )}
-            <FormSubmit title="Sign In" onClick={formik.handleSubmit} />
+            <FormSubmit title="Sign Up" onClick={formik.handleSubmit} />
             <FormBreak mtb="4em" />
-            <FormPane>
-              <FormIcon
-                icon={require("../assets/icons/facebook-icon.png")}
-                alt=""
-              ></FormIcon>
-              <FormLink to={HOME}>Login with facebook</FormLink>
-            </FormPane>
             <FormText>
-              New to Netflix?<FormLink to={SIGN_UP}>Sign up now.</FormLink>
+              Already on Netflix?<FormLink to={SIGN_IN}>Sign in now.</FormLink>
             </FormText>
             <FormTextSmall>
               This page is protected by Google reCAPTCHA to ensure you're not a
@@ -121,4 +142,4 @@ const SignInComponent: React.FC<{}> = ({ children, ...restProps }) => {
     </>
   );
 };
-export default SignInComponent;
+export default SignUpComponent;
